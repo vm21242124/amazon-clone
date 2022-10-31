@@ -1,0 +1,24 @@
+.subtotal{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 25px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 90%;
+    margin-top: 1rem;
+}
+.subtotal_gift{
+    display: flex;
+    align-items: center;
+}
+.paye{
+    width: 90%;
+    color: black;
+    background: rgb(255, 236, 24);
+    
+}

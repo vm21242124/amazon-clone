@@ -1,0 +1,30 @@
+.checkoutproduct{
+    display: flex;
+    align-items: center;
+    
+    background-color: rgb(255, 255, 255);
+    margin-top: 1rem;
+    width: 90%;
+    max-width: 1500px;
+}
+.checkoutproduct_containe{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.checkoutproduct_left{
+    width: 30%;
+}
+.checkoutproduct_right{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+}
+.checkoutproduct_img{
+    width: 70%;
+    object-fit: contain;
+    margin: 1rem;
+}
