@@ -4,8 +4,10 @@ import { BsSearch, BsCartCheck } from "react-icons/bs";
 import logo from "../../img/amazon.png";
 import { NavLink } from "react-router-dom";
 import { logOut, useAuth } from "../../firebasse";
+import { useStateValue } from "../../Stateprovider";
 
 const Navbar = () => {
+  const [{ basket }] = useStateValue();
   const user=useAuth();
   
 
@@ -36,9 +38,9 @@ const Navbar = () => {
           <span className="header_optionLineOne">your</span>
           <span className="header_optionLinTwo">prime</span>
         </div>
-        <div className="header_optionBasket">
+        <div className="header_option">
           <NavLink className="header_optionBasket navlink" to="/checkout">
-            <BsCartCheck />
+            <BsCartCheck /> {basket?.length}
           </NavLink>
           
         </div>

@@ -1,15 +1,10 @@
-// Import the functions you need from the SDKs you need
-// Import the functions you need from the SDKs you need
+
 import { initializeApp } from "firebase/app";
 
 import {getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged, signOut} from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useStateValue } from "./Stateprovider.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyApqT3BKIWWcBgkfQuqdUq_YTonK_dlcz8",
   authDomain: "clone-725ed.firebaseapp.com",

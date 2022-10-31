@@ -3,12 +3,17 @@ import "./Payment.css";
 import { useAuth } from "../../firebasse";
 import { useStateValue } from "../../Stateprovider";
 import Checkoutproduct from "../Product/Checkoutproduct";
+import StripeCheckout from 'react-stripe-checkout';
+import { getTotalBasket } from "../../Reducer";
 const Payment = () => {
+  const onToken=((token)=>{
+    console.log(token)
+  })
   const user = useAuth();
   const [{ basket }] = useStateValue();
   return (
     <div className="payment">
-        <h2>You Have {basket.length} products</h2>
+      <h2>You Have {basket.length} products</h2>
       <div className="payment_container">
         <div className="payment_Section">
           <div className="payment_title">
@@ -37,12 +42,16 @@ const Payment = () => {
           </div>
         </div>
         <div className="payment_Section">
-            <div className="payment_title">
-                <h3>payment method</h3>
-            </div>
-            <div className="payment_details">
-
-            </div>
+          <div className="payment_title">
+            <h3>payment method</h3>
+          </div>
+          <div className="payment_details">
+            <h3>Total Amount {getTotalBasket(basket)}</h3>
+            <StripeCheckout
+              token={onToken}
+              stripeKey="pk_live_51LypNYSGDvVtXMdY66HmQtkBse6ZtrYVjAXVYiTUCMEwusXGmMivOAMP6uH4Aclp1DDVOSC2WbjF6isjmYWNELOW00Gaj2E69L"
+            />
+          </div>
         </div>
       </div>
     </div>
