@@ -3,8 +3,10 @@ import Checkoutproduct from "../Product/Checkoutproduct";
 import Subtotal from "../Subtotal/Subtotal";
 import "./Checkout.css";
 import {useStateValue} from'../../Stateprovider'
+import {useAuth} from '../../firebasse.js'
+import Emptycart from "./Emptycart";
 const Checkout = () => {
-  
+  const user=useAuth();
   const [{basket}]=useStateValue();
   return (
     
@@ -17,7 +19,7 @@ const Checkout = () => {
         />
         <h2 className="checkout_title">Your Cart Has {basket?.length} products</h2>
         <div className="checkout_itmes">
-          {basket.map(item=>(
+          {/* {basket.map(item=>(
             <Checkoutproduct
             id={item.id}
             image={item.image}
@@ -25,7 +27,18 @@ const Checkout = () => {
             price={item.price}
             rating={item.rating}
             />
-          ))}
+            
+          ))} */}
+          {user?basket.map(item=>(
+            <Checkoutproduct
+            id={item.id}
+            image={item.image}
+            title={item.title}
+            price={item.price}
+            rating={item.rating}
+            />
+            
+          )):<Emptycart/>}
           
         </div>
       </div>

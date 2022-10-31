@@ -1,25 +1,30 @@
 import React from "react";
 import "./Product.css";
 import { useStateValue } from "../../Stateprovider";
-const Product = ({id, title, image, price, rating }) => {
+import { useAuth } from "../../firebasse";
+const Product = ({id, title, image, price, rating ,href}) => {
   const [{basket},dispatch]=useStateValue();
+  const user=useAuth()
   const addToBasket=(e)=>{
     e.preventDefault();
-    dispatch({
-      type:"ADD_TO_BASKET",
-      item:{
-        id:id,
-        image:image,
-        title:title,
-        price:price,
-        rating:rating
-      }
-    })
+    if(user){
+
+      dispatch({
+        type:"ADD_TO_BASKET",
+        item:{
+          id:id,
+          image:image,
+          title:title,
+          price:price,
+          rating:rating
+        }
+      })
+    }
   }
   return (
     <div className="product">
       <div className="product_info">
-        <p>{title}</p>
+        <a className="ar" href={href}>{title}</a>
         <div className="product_rating">
           {Array(rating)
             .fill()

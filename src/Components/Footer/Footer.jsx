@@ -1,7 +1,7 @@
 import React from 'react'
 import './Footer.css'
 import logo from '../../img/amazon.png'
-import { NavLink } from 'react-router-dom'
+
 const Footer = () => {
   return (
     <div className="Footer">
@@ -29,9 +29,18 @@ const Footer = () => {
             </div>
             <div className="Footer_options">
                 <h4>About Dev</h4>
-                <p>GitHub</p>
-                <p>LinkdIn</p>
-                <p>vinodrmali01@gmai.com</p>
+      
+
+                <a href="https://github.com/vm21242124" className='navlink'>GitHub</a>
+                
+                
+                <a href='https://linkedin.com/in/vinod-mali-9a2abb230' className='navlink'>LinkdIn</a>
+
+                
+            
+
+                <p className='navlink'>vinodrmali01@gmail.com</p>
+                
             </div>
             
 

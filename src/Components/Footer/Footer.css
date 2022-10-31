@@ -31,6 +31,10 @@
     margin-bottom: 5px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
+.Footer_options{
+    display: flex;
+    flex-direction: column;
+}
 .Footer_last{
     display: flex;
     justify-content: center;
