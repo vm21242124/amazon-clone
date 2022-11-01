@@ -5,14 +5,15 @@ import {getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuth
 import { useEffect, useState } from "react";
 import { useStateValue } from "./Stateprovider.js";
 
+
 const firebaseConfig = {
-  apiKey: "AIzaSyApqT3BKIWWcBgkfQuqdUq_YTonK_dlcz8",
-  authDomain: "clone-725ed.firebaseapp.com",
-  projectId: "clone-725ed",
-  storageBucket: "clone-725ed.appspot.com",
-  messagingSenderId: "415877903552",
-  appId: "1:415877903552:web:40ff05934544bd1eed2925",
-  measurementId: "G-3HE25R6MRZ"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
+  measurementId: process.env.REACT_APP_measurementId
 };
 
 // Initialize Firebase
